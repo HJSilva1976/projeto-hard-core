@@ -1,0 +1,477 @@
+:root {
+
+    /*declaração de variáveis, aqui podemos padronizar algumas coisas tipo cor, distanciamneto etc... em vez de ficar sempre digitando e quando mudar, tipo uma cor, muda no root*/
+    --primary-dark: #101417;
+    --brand: #B91F33;
+    --contrast: #E0E34C;
+    --gray-light: #E1E1E1;
+    --gray-medium: #666666;
+    --white: #FFFFFF;
+    --radius: 3px;
+}
+
+#academia {
+    scroll-margin-top: 200px;
+
+}
+
+#planos,
+#contato {
+    scroll-margin-top: 135px;
+}
+
+* {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+}
+
+html {
+    scroll-behavior: smooth;
+    /*ele desce suavisado*/
+}
+
+body {
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    /*transforma o texto em maiúsculo*/
+    background-color: var(--primary-dark);
+    margin: 0px;
+    /*cursor: url(../img/cursor.png) 15 15, pointer;*/
+}
+
+img {
+    display: block;
+    /*imagens não serão tratadas como texto ( não terão espaço na parte inferior, todo texto vem com um pequeno espaço abaixo, devido o tamanho (largura) da linha)*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+    margin: 0;
+    line-height: 90%;
+    /* aqui ele colocou pensando la na div que fica ao lado do mapa, para ajeitar o tamanho junto do mapa, para ficar do mesmo tamanho*/
+}
+
+h2 {
+    color: var(--white);
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--gray-light);
+}
+
+a {
+    text-decoration: none;
+}
+
+.bx-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn {
+    background-color: var(--brand);
+    color: var(--white);
+    font-size: 18px;
+    display: inline-block;
+    padding: 11px 60px 7px 60px;
+    /* padding: 13px 60px 9px 60px; antes era assim. Devido ter colocado no border 2px, tivemos que alterar*/
+    border-radius: var(--radius);
+    line-height: 100%;
+    /*ver no figma a altura da linha linha A, clicando em cima da plavra*/
+    transition: 0.3s;
+    border: solid 2px transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--contrast);
+    color: var(--primary-dark);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: solid 2px var(--brand);
+
+}
+
+.btn-block {
+    display: block;
+}
+
+/* referente hero-section, sobre o mudança tipo carrossel */
+/* .bx-wrapper .bx-pager{
+    bottom: 20px;
+}
+
+.bx-pager-item .active{
+    background-color: var(--contrast) !important;
+}
+
+.bx-pager-link{
+    background-color: var(--brand) !important;
+}
+
+.bx-pager-link:hover{
+    background-color: var(--gray-light) !important;
+}    */
+
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    /*vertical horizontal*/
+    /*margin-left: auto;
+    margin-right: auto;*/
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    /*ferramanta que faz (ativa) um filtro para diversas coisas e blur é um tipo de filtro*/
+    padding: 16px 0;
+    width: 100%;
+    position: sticky;
+    /*posição fixa a partir da rolagem do usuário*/
+    top: 0;
+    z-index: 1000;
+    /*faz com que o elemento posicionado fique sobreposto 1000 camadas - poderia ser qualquer numero*/
+
+
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu a {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    /*aqui é a tonalidade da fonte*/
+    text-decoration: none;
+    margin-left: 110px;
+}
+
+.menu a:hover {
+    color: var(--brand);
+}
+
+.bg-1 {
+    background-image: url(../img/background.jpg);
+}
+
+.bg-2 {
+    background-image: url(../img/background-2.jpg);
+}
+
+
+.hero-section {
+
+    background-size: cover;
+    height: calc(100vh - 100px);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.hero-section h1 {
+    color: var(--gray-light);
+    font-size: 96px;
+    line-height: 90%;
+    /*font-weight: 700;*/
+}
+
+.hero-section p {
+    color: var(--gray-light);
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.academia {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.faca-parte {
+    background-color: var(--gray-light);
+    margin-bottom: 0;
+
+}
+
+.content-faca-parte {
+    /*esse 200 foi tirado a largura da imagem arrendondado*/
+    width: calc(100% - 200px);
+    max-width: 850px;
+
+}
+
+.faca-parte .container {
+
+    /* esse 15 foi pq colocou 15 no container aula 10 */
+    padding: 37px 15px;
+    position: relative;
+}
+
+.image-faca-parte {
+    /*posição em realação ao elemento pai (desde que ele tenha position) caso contrário, será em relação ao body*/
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-faca-parte h2 {
+    color: var(--primary-dark);
+
+}
+
+.content-faca-parte p {
+    color: var(--gray-medium);
+}
+
+.planos {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.flex-cards {
+    display: flex;
+    column-gap: 24px;
+    /*espaço entre colunas*/
+}
+
+.card {
+    border: solid 1px var(--gray-light);
+    padding: 30px 25px;
+    border-radius: var(--radius);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    color: var(--white);
+    font-size: 32px;
+}
+
+.card span {
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card ul {
+    color: var(--gray-light);
+    line-height: 120%;
+    font-size: 18px;
+    text-align: left;
+    padding: 0;
+    list-style-position: inside;
+    /*posição do marcado da lista*/
+
+}
+
+.card-destaque {
+    border-color: var(--contrast);
+
+}
+
+.card-destaque span {
+    color: var(--contrast);
+}
+
+.contato {
+    display: flex;
+    column-gap: 24px;
+}
+
+.contato input, .contato textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 10px 7px 10px;
+    /* o 7px é referente ao espaço que tem abaixo do nome 10 - 3 = 7*/
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    background-color: transparent;
+    margin-bottom: 10px;
+    color: var(--white);
+    font-size: 18px;
+}
+
+.contato textarea {
+    height: 140px;
+}
+
+.footer {
+    background-color: var(--brand);
+    text-align: center;
+    padding: 14px 194px;
+    color: var(--white);
+    line-height: 120%;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: 30px;
+
+}
+
+.midia-social {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-bottom: 100px;
+
+}
+
+.copy {
+    color: var(--gray-medium);
+    text-align: center;
+}
+
+
+
+@media (max-width: 1100px) {
+
+    h2 {
+        font-size: 32px;
+    }
+
+
+    .menu {
+        /* display: none; */
+        background-color: var(--brand);
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 100%;
+        height: 100vh;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        transition: 0.3s;
+    }
+
+    .menu a {
+        display: block;
+        margin: 0;
+        padding: 25px 0 20px 0;
+        border-bottom: 1px solid var(--primary-dark);
+    }
+
+    .menu a:hover{
+        color: var(--contrast);
+    }
+
+    /* esta classe será add/removida pelo JS */
+    .menu-open {
+        /* display: block; */
+        transform: translateX(0);
+    }
+
+    .bar {
+        width: 40px;
+        height: 3px;
+        background-color: var(--white);
+        margin-bottom: 3px;
+        transition: 0.5s;
+    }
+
+    .x .bar:first-child{
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .x .bar:nth-child(2){
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    .x .bar:last-child{
+        transform: rotate(-45deg) translate(4px, -3px);
+    }
+
+    .hero-section {
+        height: 420px;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .image-aluno img {
+        width: 100%;
+        min-width: 300px;
+        max-width: 558px;
+
+    }
+
+    .card h3 {
+        font-size: 24px;
+    }
+
+    .flex-cards {
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 550px;
+    }
+
+    .contato {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .mapa iframe {
+        width: 100%;
+    }
+
+    .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .academia {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .image-faca-parte {
+        display: none;
+    }
+
+    .content-faca-parte {
+        width: 100%;
+    }
+
+
+
+}
